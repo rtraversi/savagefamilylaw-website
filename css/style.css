@@ -581,6 +581,74 @@ strong { font-weight: 600; color: var(--text); }
 }
 
 /* ============================================================
+   FAQ
+   ============================================================ */
+.faq-list { max-width: 780px; }
+
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  background: none;
+  border: none;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--navy);
+  text-align: left;
+  transition: color var(--t);
+}
+.faq-q:hover { color: var(--teal); }
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  color: var(--gold);
+}
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform var(--t), opacity var(--t);
+}
+.faq-icon::before { width: 14px; height: 1.5px; }
+.faq-icon::after { width: 1.5px; height: 14px; }
+.faq-q[aria-expanded="true"] .faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-a {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s var(--ease);
+}
+.faq-a-inner { padding-bottom: 1.75rem; }
+.faq-a-inner p { margin-bottom: 0.75rem; }
+.faq-a-inner p:last-child { margin-bottom: 0; }
+.faq-a-inner ul {
+  margin: 0.5rem 0 0.75rem 1.5rem;
+}
+.faq-a-inner li {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+  margin-bottom: 0.35rem;
+}
+
+/* ============================================================
    CONTACT
    ============================================================ */
 .contact-cols { align-items: start; }

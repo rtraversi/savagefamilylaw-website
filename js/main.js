@@ -21,6 +21,26 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    // Close any other open items
+    document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(other => {
+      if (other !== btn) {
+        other.setAttribute('aria-expanded', 'false');
+        other.closest('.faq-item').querySelector('.faq-a').style.maxHeight = '';
+      }
+    });
+
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    answer.style.maxHeight = isOpen ? '' : answer.scrollHeight + 'px';
+  });
+});
+
 // Contact form — Netlify handles submission server-side;
 // this intercepts to show inline success without a page reload.
 const form = document.getElementById('contactForm');
