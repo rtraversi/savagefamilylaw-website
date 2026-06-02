@@ -175,7 +175,7 @@ strong { font-weight: 600; color: var(--text); }
 
 .nav-logo { flex-shrink: 0; margin-right: auto; }
 .nav-logo img {
-  height: 52px;
+  height: 78px;
   width: auto;
   filter: brightness(0) invert(1);
   transition: filter var(--t);
@@ -262,7 +262,7 @@ strong { font-weight: 600; color: var(--text); }
   background-image: url('../images/dallasskyline.png');
   background-size: cover;
   background-position: center 60%;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
 /* Subtle diamond lattice on top of skyline */
