@@ -461,6 +461,112 @@ strong { font-weight: 600; color: var(--text); }
 .about-content p:last-of-type { margin-bottom: 1.75rem; }
 
 /* ============================================================
+   ATTORNEYS GRID
+   ============================================================ */
+.attorneys-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.attorney-card {
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
+  padding: 3rem;
+}
+
+.attorney-name {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.attorney-title {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.attorney-quote {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--navy);
+  border-left: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  opacity: 0.75;
+}
+
+.attorney-card p {
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+}
+
+.attorney-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cream-dark);
+  margin-bottom: 1.75rem;
+}
+
+.attorney-footer span {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+/* ============================================================
+   CREDENTIALS — PER-ATTORNEY
+   ============================================================ */
+.creds-atty { margin-bottom: 0; }
+
+.creds-atty-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.creds-atty-name {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.creds-atty-role {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+}
+
+.creds-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4.5rem 0;
+}
+
+/* ============================================================
    COLLABORATIVE
    ============================================================ */
 .collab-grid {
@@ -862,8 +968,9 @@ a.contact-row:hover { opacity: 0.75; }
   .stat { padding: 1.5rem 1.5rem; flex: 0 0 50%; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .stat-sep { display: none; }
 
-  /* About */
+  /* About / Attorneys */
   .col-2 { grid-template-columns: 1fr; gap: 3rem; }
+  .attorneys-grid { grid-template-columns: 1fr; }
 
   /* Grids */
   .collab-grid { grid-template-columns: 1fr; }
