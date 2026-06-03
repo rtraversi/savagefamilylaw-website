@@ -41,6 +41,35 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+// Quote carousel — auto-advances every 5 seconds
+const quoteSlides = document.querySelectorAll('.quote-slide');
+const quoteDots   = document.querySelectorAll('.quote-dot');
+let currentQuote  = 0;
+let quoteTimer;
+
+function showQuote(index) {
+  quoteSlides[currentQuote].classList.remove('active');
+  quoteDots[currentQuote].classList.remove('active');
+  currentQuote = (index + quoteSlides.length) % quoteSlides.length;
+  quoteSlides[currentQuote].classList.add('active');
+  quoteDots[currentQuote].classList.add('active');
+}
+
+function startQuoteCarousel() {
+  quoteTimer = setInterval(() => showQuote(currentQuote + 1), 5000);
+}
+
+if (quoteSlides.length > 1) {
+  quoteDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      showQuote(i);
+      clearInterval(quoteTimer);
+      startQuoteCarousel();
+    });
+  });
+  startQuoteCarousel();
+}
+
 // Contact form — Netlify handles submission server-side;
 // this intercepts to show inline success without a page reload.
 const form = document.getElementById('contactForm');
