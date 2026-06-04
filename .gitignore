@@ -1,0 +1,6 @@
+node_modules/
+package-lock.json
+capture.js
+/screenshot*.png
+/ss-*.png
+/images/examplecard*.jpg
